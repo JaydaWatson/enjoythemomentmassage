@@ -1,0 +1,19 @@
+.contact{
+    text-align: center;
+}
+
+.Header{
+    background-color: lightgrey;
+    height: 60px;
+    margin: auto;
+}
+
+.icons{
+    margin: 2px;
+    padding: 2px;
+}
+
+.link{
+    margin: 2px;
+    padding: 2px;
+}

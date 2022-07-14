@@ -1,0 +1,13 @@
+.Homepage{
+    text-align: center;
+}
+
+.footer{
+    text-align: left;
+}
+
+.react-player{
+    position: relative;
+    margin: 7px;
+    padding: 7px;
+}
