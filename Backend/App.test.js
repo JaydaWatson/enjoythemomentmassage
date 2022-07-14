@@ -4,6 +4,8 @@ const express = require('express');
 
 const bodyparser = require('body-parser');
 
+const PORT = process.env.PORT || 3001;
+
 require('./Schema/index');
 
 app = express();
@@ -54,5 +56,9 @@ app.get('/api', async  (req, res) => {
 
 })
 
+if (process.env.NODE_ENV === 'production'){
+  app.use(express.static('/build'));
+}
 
-app.listen(3001, () => { console.log('Server started on port 3001') })
+
+app.listen(PORT, () => { console.log(`Server started on port ${PORT}`) })
