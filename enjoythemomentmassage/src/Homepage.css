@@ -1,0 +1,14 @@
+.Homepage{
+    text-align: center;
+    display: block;
+    justify-content: center;
+}
+
+.footer{
+    text-align: left;
+}
+
+.react-player{
+    margin: 9px;
+    padding: 9px;
+}
