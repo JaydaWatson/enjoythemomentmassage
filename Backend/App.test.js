@@ -57,8 +57,7 @@ app.get('/api', async  (req, res) => {
 })
 
 if (process.env.NODE_ENV === 'production'){
-  app.use(express.static('/build'));
+  app.use(express.static('../enjoythemomentmassage/build'));
 }
-
 
 app.listen(PORT, () => { console.log(`Server started on port ${PORT}`) })

@@ -5,9 +5,12 @@
   "main": "App.test.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd.. && cd enjoythemomentmassage && npm run build",
+    "install-b": "cd.. && cd enjoythemomentmassage && npm install",
+    "heroku-postbuild": "npm run install-b && npm run build ",
     "dev": "node App.test.js",
-    "start": "nodemon App.test.js",
-    "start-dev": "nodemon App.test.js"
+    "start": "node App.test.js",
+    "start-dev": "node App.test.js"
   },
   "keywords": [],
   "author": "",

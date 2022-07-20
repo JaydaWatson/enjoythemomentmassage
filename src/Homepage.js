@@ -1,6 +1,7 @@
 import React from "react";
 import './Homepage.css';
 import ReactPlayer from "react-player";
+// import { Player } from 'video-react';
 import { Link } from "react-router-dom"
 import { TbMassage, TbCalendar, TbHome } from "react-icons/tb";
 import { IoMdContact } from "react-icons/io";
@@ -21,20 +22,40 @@ function Header() {
 }
 
 function Main() {
+
+    // const [videoFilePath, setVideoFilePath] = useState(null);
+
+    // const handleVideoUpload = (event) => {
+    //     const [file] = event.target.files;
+    //     setVideoFilePath(URL.createObjectURL(file));
+    // };
+
     return (
         <section>
-            <p>Body Rubs and Intimacy</p>
 
-            <p2>Level 1 Head-Toe Full Body Massage</p2>
-            <ReactPlayer className='react-player' url="https://www.youtube.com/watch?v=VNxkfaNV5cE" />
+            {/* <p2>Level 1 Head-Toe Full Body Massage</p2> */}
+
+            {/* <Player>
+                <source src="./public/videos/HomepageVideo.mp4" />
+            </Player>
+            <link
+                rel="stylesheet"
+                href="https://video-react.github.io/assets/video-react.css"
+            /> */}
+
+            {/* <input type='file' onChange={handleVideoUpload}/> */}
+
+
+            <ReactPlayer
+                className='react-player'
+                width="65%"
+                height="660px"
+                url='https://firebasestorage.googleapis.com/v0/b/react-enjoythemomentmassage.appspot.com/o/HomepageVideo.mp4?alt=media&token=ff817a67-4187-46fd-8653-493e167729a2'
+                controls={true}
+            />
+
             <p></p>
 
-            <p3>Level 2 Focusing on Tension/Stress With A Taste of Level 3</p3>
-            <ReactPlayer className='react-player' url="https://www.youtube.com/watch?v=VNxkfaNV5cE" />
-            <p></p>
-
-            <p4>Level 3 Make You Fall In Love Experience, Stretch Therapy, Body2Body, Up Close And Personal</p4>
-            <ReactPlayer className='react-player' url="https://www.youtube.com/watch?v=VNxkfaNV5cE" />
         </section>
     );
 }

@@ -1,5 +1,7 @@
 .Homepage{
     text-align: center;
+    display: block;
+    justify-content: center;
 }
 
 .footer{
@@ -7,7 +9,6 @@
 }
 
 .react-player{
-    position: relative;
-    margin: 7px;
-    padding: 7px;
+    margin: 9px;
+    padding: 9px;
 }

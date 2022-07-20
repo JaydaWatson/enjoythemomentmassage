@@ -4,6 +4,7 @@
 
 .react-player{
     position: relative;
+    left: 15%;
     margin: 7px;
     padding: 7px;
 }
