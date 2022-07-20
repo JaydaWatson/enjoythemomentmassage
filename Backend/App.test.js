@@ -4,7 +4,7 @@ const express = require('express');
 
 const bodyparser = require('body-parser');
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT 
 
 require('./Schema/index');
 
