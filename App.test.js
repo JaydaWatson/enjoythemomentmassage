@@ -6,7 +6,7 @@ const bodyparser = require('body-parser');
 
 const PORT = process.env.PORT || 3001;
 
-require('./Schema/index');
+require('./schema/index');
 
 app = express();
 
