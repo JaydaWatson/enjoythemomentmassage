@@ -10,6 +10,7 @@ function BookingInfo() {
     const [bookings, setBookings] = useState([])
 
     useEffect(() => {
+        console.log('hey')
         axios.get('/api').then(res => {
             console.log(res.data)
             setBookings(res.data.data)
