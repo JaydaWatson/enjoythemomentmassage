@@ -4,7 +4,7 @@ const express = require('express');
 
 const bodyparser = require('body-parser');
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 
 require('./Schema/index');
 
@@ -60,7 +60,4 @@ if (process.env.NODE_ENV === 'production'){
   app.use(express.static('Enjoy-Frontend/build'));
 }
 
-app.listen(process.env.port || 3000, () => {// port = this.address().port; 
-  console.log(listening in ${app.settings.env} mode);});
-
-// app.listen(PORT, () => { console.log(`Server started on port ${PORT}`) })
+app.listen(PORT, () => { console.log(`Server started on port ${PORT}`) })
