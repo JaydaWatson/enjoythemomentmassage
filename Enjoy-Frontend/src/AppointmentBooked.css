@@ -4,7 +4,7 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    background-image: url(/AppointmentBookedCss.jpg);
+    background-image: url(../public/AppointmentBookedCss.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
