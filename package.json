@@ -4,13 +4,12 @@
   "description": "",
   "main": "App.test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd Enjoy-Frontend && npm run build",
-    "install-b": "cd Enjoy-Frontend && npm install",
-    "heroku-postbuild": "npm run install-b && npm run build ",
-    "dev": "node App.test.js",
-    "start": "node App.test.js",
-    "start-dev": "node App.test.js"
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +20,7 @@
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "mongoose": "^6.4.6",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "serve": "^14.0.1"
   }
 }
