@@ -5,7 +5,9 @@
 }
 
 .footer{
-    text-align: left;
+    text-align: right;
+    margin: 30px;
+    padding: 9px;
 }
 
 .react-player{

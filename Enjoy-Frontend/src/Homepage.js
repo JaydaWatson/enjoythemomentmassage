@@ -4,7 +4,7 @@ import ReactPlayer from "react-player";
 // import { Player } from 'video-react';
 import { Link } from "react-router-dom"
 import { TbMassage, TbCalendar, TbHome } from "react-icons/tb";
-import { IoMdContact } from "react-icons/io";
+import { IoMdContact, IoMdLogIn } from "react-icons/io";
 
 
 function Header() {
@@ -33,16 +33,6 @@ function Main() {
     return (
         <section>
 
-            {/* <p2>Level 1 Head-Toe Full Body Massage</p2> */}
-
-            {/* <Player>
-                <source src="./public/videos/HomepageVideo.mp4" />
-            </Player>
-            <link
-                rel="stylesheet"
-                href="https://video-react.github.io/assets/video-react.css"
-            /> */}
-
             {/* <input type='file' onChange={handleVideoUpload}/> */}
 
 
@@ -63,7 +53,11 @@ function Main() {
 function Footer() {
     return (
         <footer className="footer">
+            
+            <Link to="/BookingInfo" className='link'> <IoMdLogIn className='bookingicon' icon="BookingInfo" size="30" /> </Link>
+
             <p>Copyright 2022</p>
+
         </footer>
     );
 }
@@ -76,8 +70,12 @@ function Homepage() {
             <Main />
 
             <Footer />
+            
         </div>
-    );
+
+
+
+);
 }
 
 export default Homepage;
