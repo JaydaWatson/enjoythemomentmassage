@@ -3,3 +3,9 @@
     display: block;
     border: 2px solid;
 }
+
+.homebutton{
+    text-align: center;
+    margin: 2px;
+    padding: 0px;
+}

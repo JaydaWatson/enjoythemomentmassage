@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from "react-router-dom"
+import { TbHome } from "react-icons/tb";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import moment from 'moment';
@@ -28,6 +30,10 @@ function BookingInfo() {
         <div>
 
             <h1 style={{ textAlign: "center" }}>Appointments Booked</h1>
+
+            <div className='homebutton'>
+                <Link to="/" className='link'> <TbHome className='icons' icon="home" size="30" /> </Link>
+            </div>
 
             {bookings ?
                 bookings.map((book) =>

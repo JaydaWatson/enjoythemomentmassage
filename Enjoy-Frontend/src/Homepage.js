@@ -1,7 +1,6 @@
 import React from "react";
 import './Homepage.css';
 import ReactPlayer from "react-player";
-// import { Player } from 'video-react';
 import { Link } from "react-router-dom"
 import { TbMassage, TbCalendar, TbHome } from "react-icons/tb";
 import { IoMdContact, IoMdLogIn } from "react-icons/io";
