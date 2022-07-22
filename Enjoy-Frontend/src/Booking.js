@@ -82,8 +82,7 @@ function Booking() {
             }
 
             const res = axios.post('/api', { bookinginfo })
-            console.log(res)
-
+            
             nav('./AppointmentBooked')
         }
 

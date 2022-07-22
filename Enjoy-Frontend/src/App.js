@@ -6,6 +6,8 @@ import Massages from "./Massages";
 import Booking from "./Booking";
 import Contact from "./Contact";
 import BookingInfo from "./BookingInfo";
+import Login from "./Login";
+import Reset from "./Reset";
 import AppointmentBooked from "./AppointmentBooked";
 
 function App() {
@@ -16,11 +18,13 @@ function App() {
 
         <Routes>
 
-          <Route path="/" element={<Homepage />} />
-          <Route path="/Massages" element={<Massages />} />
-          <Route path="/Booking" element={<Booking />} />
-          <Route path="/Contact" element={<Contact />} />
+          <Route path="/" element={<Homepage/>}/>
+          <Route path="/Massages" element={<Massages/>}/>
+          <Route path="/Booking" element={<Booking/>}/>
+          <Route path="/Contact" element={<Contact/>}/>
           <Route path="/BookingInfo" element={<BookingInfo/>}/>
+          <Route path="/Login" element={<Login/>}/>
+          <Route path="/Reset" element={<Reset/>}/>
           <Route path="/Booking/AppointmentBooked" element={<AppointmentBooked/>}/>
 
         </Routes>
@@ -30,9 +34,5 @@ function App() {
     </div>
   );
 }
-
-
-
-
 
 export default App;

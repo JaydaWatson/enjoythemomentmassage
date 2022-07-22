@@ -53,7 +53,7 @@ function Footer() {
     return (
         <footer className="footer">
             
-            <Link to="/BookingInfo" className='link'> <IoMdLogIn className='bookingicon' icon="BookingInfo" size="30" /> </Link>
+            <Link to="/Login" className='link'> <IoMdLogIn className='bookingicon' icon="BookingInfo" size="30" /> </Link>
 
             <p>Copyright 2022</p>
 

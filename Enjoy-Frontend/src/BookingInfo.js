@@ -1,18 +1,21 @@
-import React from 'react';
-import { Link } from "react-router-dom"
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from "react-router-dom"
 import { TbHome } from "react-icons/tb";
-import { useEffect, useState } from 'react';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, db, logout } from "./firebase";
 import axios from 'axios';
 import moment from 'moment';
 import './BookingInfo.css';
 
 function BookingInfo() {
 
-    
-    const [bookings, setBookings] = useState([])
+    const [user, loading, error] = useAuthState(auth);
+    const [name, setName] = useState("");
+    const navigate = useNavigate();
+
+    const [bookings, setBookings] = useState([]);
 
     useEffect(() => {
-        console.log('hey')
         axios.get('/api').then(res => {
             console.log(res.data)
             setBookings(res.data.data)
@@ -22,8 +25,10 @@ function BookingInfo() {
     }, []
     )
 
-
-
+    useEffect(() => {
+        if (loading) return;
+        if (!user) return navigate("/Login");
+      }, [user, loading]);
 
     return (
 
@@ -75,15 +80,18 @@ function BookingInfo() {
                             Vip: {book.vip}
                         </div>
 
-                        <br/>
+                        <br />
 
                     </div>
 
-                )
+                ) :
 
-                :
                 <div />
             }
+
+            <button className="logout__btn" onClick={logout}>
+                Logout
+            </button>
 
         </div >
     )
