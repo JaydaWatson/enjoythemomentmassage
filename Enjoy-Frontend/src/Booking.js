@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TbMassage, TbCalendar, TbHome } from "react-icons/tb";
 import { IoMdContact } from "react-icons/io";
 import { Link } from 'react-router-dom';
@@ -7,14 +7,17 @@ import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
+import moment from 'moment';
 import { useNavigate } from 'react-router';
 import './Booking.css';
+import { addDays, eachDayOfInterval, parse, parseISO } from 'date-fns';
+import { isObjectIdOrHexString } from 'mongoose';
 
 function Booking() {
 
     const nav = useNavigate()
 
-    const [startDate, setStartDate] = useState(setHours(setMinutes(new Date(), 0), 9));
+    const [startDate, setStartDate] = useState(setHours(setMinutes(new Date(), 30), 8));
 
     const filterPassedTime = (time) => {
         const currentDate = new Date();
@@ -82,11 +85,80 @@ function Booking() {
             }
 
             const res = axios.post('/api', { bookinginfo })
-            
+
             nav('./AppointmentBooked')
         }
 
     };
+
+    const [bookings, setBookings] = useState([]);
+
+    useEffect(() => {
+        axios.get('/api').then(res => {
+            // console.log(res.data.data)
+            setBookings(res.data.data)
+
+        })
+
+    }, []);
+
+    // console.log(bookings)
+
+    const setAlreadyBooked = bookings.map((booked) =>
+
+        moment(booked.startDate).format()
+
+    );
+
+    const temp = {};
+
+    for (const alreadybooked of setAlreadyBooked) {
+        temp[alreadybooked] = true;
+    }
+
+    const uniqueAlreadyBooked = []
+    for (const alreadybooked in temp) {
+        uniqueAlreadyBooked.push(alreadybooked)
+    }
+
+    const results = uniqueAlreadyBooked.toString()
+
+    // console.log (results)
+
+    const splitarray = results.split(",");
+
+    // console.log(splitarray)
+
+    const excludeTimes = useState([]);
+
+    function unavailable() {
+        splitarray.forEach(item => {
+            const year = new Date(item).getFullYear();
+            const month = new Date(item).getMonth();
+            const day = new Date(item).getDate();
+            const hour = new Date(item).getHours();
+            const min = new Date(item).getMinutes();
+
+            excludeTimes.push(setHours(setMinutes(new Date(item), min), hour));
+        })
+        return excludeTimes
+    }
+
+    console.log(excludeTimes)
+
+
+    // function containsDuplicates(setAlreadyBooked) {
+    //     if (setAlreadyBooked.length !== new Set(setAlreadyBooked).size) {
+    //         return true && new Set(setAlreadyBooked);
+    //     }
+    //     else {
+    //         return false;
+    //     }
+
+    // }
+
+    // const alreadybooked = [(containsDuplicates(setAlreadyBooked))]
+
 
 
     return (
@@ -112,11 +184,15 @@ function Booking() {
                     selected={startDate}
                     onChange={(date) => setStartDate(date)}
                     showTimeSelect
+                    minTime={new Date(0, 0, 0, 8, 30)} //8:30am
+                    maxTime={new Date(0, 0, 0, 22, 30)} //10:30pm
                     filterTime={filterPassedTime}
                     timeIntervals={70}
                     timeCaption="Time"
                     dateFormat="MMMM d, yyyy h:mm aa"
                     minDate={new Date()}
+                    excludeTimes={[unavailable()]}
+                    // onChangeRaw={(event) => handleChangeRaw(event.target.value)}
                     inline
                 />
 
@@ -267,6 +343,22 @@ function Booking() {
             <div>
                 <button className="button" onClick={appponitmentBooked} >Book Appointment</button>
             </div>
+
+            {/* <div>
+
+                {bookings ?
+                    bookings.map((book) =>
+
+                        <div key={book._id}>
+                            Date & Time: {moment(book.startDate).format('MMMM Do YYYY, h:mm:a')}
+                        </div>
+
+                    ) :
+
+                    <div />
+                }
+
+            </div > */}
 
         </div>
 

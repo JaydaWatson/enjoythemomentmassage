@@ -2,15 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from "react-router-dom"
 import { TbHome } from "react-icons/tb";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, db, logout } from "./firebase";
+import { auth, logout } from "./firebase";
 import axios from 'axios';
 import moment from 'moment';
 import './BookingInfo.css';
 
 function BookingInfo() {
 
-    const [user, loading, error] = useAuthState(auth);
-    const [name, setName] = useState("");
+    const [user, loading] = useAuthState(auth);
     const navigate = useNavigate();
 
     const [bookings, setBookings] = useState([]);
@@ -28,7 +27,7 @@ function BookingInfo() {
     useEffect(() => {
         if (loading) return;
         if (!user) return navigate("/Login");
-      }, [user, loading]);
+    }, [user, loading]);
 
     return (
 
@@ -86,7 +85,7 @@ function BookingInfo() {
 
                 ) :
 
-                <div />
+                <div/>
             }
 
             <button className="logout__btn" onClick={logout}>
