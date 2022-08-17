@@ -21,13 +21,13 @@ function Contact() {
             <br />
             <br />
 
-            <p> <GrInstagram /> Instagram: @enjoythemoment_wtommy </p>
-            <p1> <SiOnlyfans /> OnlyFans: @enjoythemoment_massage</p1>
+            <p className='text'> <GrInstagram /> Instagram: @enjoythemoment_wtommy </p>
+            <p1 className='text'> <SiOnlyfans /> OnlyFans: @enjoythemoment_massage</p1>
 
             <br />
             <br />
 
-            <p2> <IoLogoTwitter /> Twitter: @_tommyjay33333</p2>
+            <p2 className='text'> <IoLogoTwitter /> Twitter: @_tommyjay33333</p2>
         </div>
     );
 }

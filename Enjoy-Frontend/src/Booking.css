@@ -1,28 +1,28 @@
-.AppointmentBooking{
+.AppointmentBooking {
     text-align: center;
 }
 
-.header{
+.header {
     margin: 9px;
 }
 
-.icons{
+.icons {
     margin: 2px;
     padding: 2px;
 }
 
-.link{
+.link {
     margin: 2px;
     padding: 2px;
 }
 
-.Error{
+.Error {
     color: red;
     font-size: 13px;
 }
 
 
-.Form{
+.Form {
     padding: 10px;
     margin: 3px;
     display: flex;
@@ -32,35 +32,35 @@
     background-color: lightgrey;
 }
 
-.input{
+.input {
     border-radius: 10px;
     padding: 10px;
     box-shadow: 20px;
     margin: 3px;
 }
 
-input[type=radio]{
+input[type=radio] {
     display: inline;
     margin: 9px;
 }
 
-input[type=checkbox]{
+input[type=checkbox] {
     display: inline;
     margin: 9px;
 }
 
-.Selectors{
+.Selectors {
     border-radius: 15px;
     box-shadow: 20px;
     background-color: lightgrey;
 }
 
-.button{
+.button {
     width: 100%;
     height: 50px;
     padding: 10px;
     border: none;
-    background-color: lightgreen;
+    background-color: #4DD0E1;
     color: black;
     border-radius: 15px;
     font-weight: bold;
@@ -69,3 +69,6 @@ input[type=checkbox]{
     margin-top: 15px;
     margin-bottom: 30px;
 }
+
+
+

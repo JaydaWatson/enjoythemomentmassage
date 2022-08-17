@@ -3,14 +3,19 @@
 }
 
 .Header{
-    background-color: lightgrey;
-    height: 60px;
+    height: 30px;
     margin: auto;
+    color: #ffea00;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.text{
+    color: #ffea00;
 }
 
 .icons{
-    margin: 2px;
-    padding: 2px;
+    margin: 0px;
+    padding: px;
 }
 
 .link{

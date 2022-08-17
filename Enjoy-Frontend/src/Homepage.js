@@ -8,8 +8,8 @@ import { IoMdContact, IoMdLogIn } from "react-icons/io";
 
 function Header() {
     return (
-        <header >
-            <h1> Enjoy The Moment Massage </h1>
+        <header className="header" >
+            <h1 className="h1"> Enjoy The Moment Massage </h1>
 
             <Link to="/" className='link'> <TbHome className='icons' icon="home" size="30" /> </Link>
             <Link to="/Massages" className='link'> <TbMassage className='icons' icon="Massages" size="30" /> </Link>
@@ -38,7 +38,7 @@ function Main() {
             <ReactPlayer
                 className='react-player'
                 width="65%"
-                height="660px"
+                height="560px"
                 url='https://firebasestorage.googleapis.com/v0/b/react-enjoythemomentmassage.appspot.com/o/HomepageVideo.mp4?alt=media&token=ff817a67-4187-46fd-8653-493e167729a2'
                 controls={true}
             />

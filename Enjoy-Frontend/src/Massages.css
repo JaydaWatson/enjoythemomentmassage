@@ -2,6 +2,10 @@
     text-align: center;
 }
 
+.h1{
+    color: #4DD0E1;
+}
+
 .react-player{
     position: relative;
     left: 15%;
@@ -16,21 +20,21 @@
 }
 
 .level1{
-    background-color: lightgray;
+    background-color: #ffea00;
     border-radius: 15px;
     margin: 9px;
     padding: 9px;
 }
 
 .level2{
-    background-color: lightblue;
+    background-color: #4DD0E1;
     border-radius: 15px;
     margin: 9px;
     padding: 9px;
 }
 
 .level3{
-    background-color: lightgray;
+    background-color: #ffea00;
     border-radius: 15px;
     margin: 9px;
     padding: 9px;

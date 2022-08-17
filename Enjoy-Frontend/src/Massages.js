@@ -10,7 +10,7 @@ function Massages() {
     return (
         <div className='Massages'>
 
-            <h1>Massages</h1>
+            <h1 className='h1'>Massages</h1>
 
             <Link to="/" className='link'> <TbHome className='icons' icon="home" size="30" /> </Link>
             <Link to="/Massages" className='link'> <TbMassage className='icons' icon="Massages" size="30" /> </Link>

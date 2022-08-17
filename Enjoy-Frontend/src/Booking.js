@@ -10,8 +10,6 @@ import axios from 'axios';
 import moment from 'moment';
 import { useNavigate } from 'react-router';
 import './Booking.css';
-import { addDays, eachDayOfInterval, parse, parseISO } from 'date-fns';
-import { isObjectIdOrHexString } from 'mongoose';
 
 function Booking() {
 
@@ -125,27 +123,38 @@ function Booking() {
 
     // console.log (results)
 
-    const splitarray = results.split(",");
+    const arrDates = results.split(",");
 
     // console.log(splitarray)
 
-    const excludeTimes = useState([]);
+    const [excludedTimes, setExcludedTimes] = useState([]);
 
-    function unavailable() {
-        splitarray.forEach(item => {
-            const year = new Date(item).getFullYear();
-            const month = new Date(item).getMonth();
-            const day = new Date(item).getDate();
-            const hour = new Date(item).getHours();
-            const min = new Date(item).getMinutes();
-
-            excludeTimes.push(setHours(setMinutes(new Date(item), min), hour));
-        })
-        return excludeTimes
+    const handleSelectedDate = (date) => {
+        setStartDate(date)
     }
 
-    console.log(excludeTimes)
+    const getExcludedTimes = (date) => {
+        let arrSpecificDates = [];
+        for (let i = 0; i < arrDates.length; i++) {
+            if (
+                moment(date, moment.ISO_8601).format("YYYY/MM/DD") ===
+                moment(arrDates[i], moment.ISO_8601).format("YYYY/MM/DD")
+            ) {
+                arrSpecificDates.push(moment(arrDates[i], moment.ISO_8601).toObject());
+            }
+        }
 
+        let arrExcludedTimes = [];
+        for (let i = 0; i < arrSpecificDates.length; i++) {
+            arrExcludedTimes.push(
+                setHours(
+                    setMinutes(new Date(), arrSpecificDates[i].minutes),
+                    arrSpecificDates[i].hours
+                )
+            );
+            setExcludedTimes(arrExcludedTimes)
+        }
+    };
 
     // function containsDuplicates(setAlreadyBooked) {
     //     if (setAlreadyBooked.length !== new Set(setAlreadyBooked).size) {
@@ -158,8 +167,6 @@ function Booking() {
     // }
 
     // const alreadybooked = [(containsDuplicates(setAlreadyBooked))]
-
-
 
     return (
 
@@ -178,11 +185,13 @@ function Booking() {
 
             </div>
 
-            <div>
+            <div className='datepicker'>
 
                 <DatePicker
-                    selected={startDate}
-                    onChange={(date) => setStartDate(date)}
+                    selected={new Date(startDate)}
+                    onSelect={getExcludedTimes}  
+                    onChange={handleSelectedDate}
+                    excludeTimes={excludedTimes}
                     showTimeSelect
                     minTime={new Date(0, 0, 0, 8, 30)} //8:30am
                     maxTime={new Date(0, 0, 0, 22, 30)} //10:30pm
@@ -191,9 +200,8 @@ function Booking() {
                     timeCaption="Time"
                     dateFormat="MMMM d, yyyy h:mm aa"
                     minDate={new Date()}
-                    excludeTimes={[unavailable()]}
-                    // onChangeRaw={(event) => handleChangeRaw(event.target.value)}
                     inline
+                    
                 />
 
             </div>
