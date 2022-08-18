@@ -33,7 +33,7 @@ function BookingInfo() {
 
         <div>
 
-            <h1 style={{ textAlign: "center" }}>Appointments Booked</h1>
+            <h1 className='title' style={{ textAlign: "center" }}>Appointments Booked</h1>
 
             <div className='homebutton'>
                 <Link to="/" className='link'> <TbHome className='icons' icon="home" size="30" /> </Link>

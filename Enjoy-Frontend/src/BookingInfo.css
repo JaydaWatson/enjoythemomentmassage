@@ -2,6 +2,8 @@
     text-align: left;
     display: block;
     border: 2px solid;
+    background-color: white;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .homebutton{
@@ -16,5 +18,9 @@
     margin-top: 10px;
     border: none;
     color: white;
-    background-color: black;
+    background-color: #4DD0E1;
   }
+
+.title{
+    color: #ffea00;
+}
