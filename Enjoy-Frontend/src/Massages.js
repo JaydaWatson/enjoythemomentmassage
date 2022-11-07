@@ -14,7 +14,7 @@ function Massages() {
 
             <Link to="/" className='link'> <TbHome className='icons' icon="home" size="30" /> </Link>
             <Link to="/Massages" className='link'> <TbMassage className='icons' icon="Massages" size="30" /> </Link>
-            <Link to="/Booking" className='link'> <TbCalendar className='icons' icon="Booking" size="30" /> </Link>
+            <Link to="/ServiceOffered" className='link'> <TbCalendar className='icons' icon="ServiceOffered" size="30" /> </Link>
             <Link to="/Contact" className='link'> <IoMdContact className='icons' icon="Contact" size="30" /> </Link>
 
             <div>

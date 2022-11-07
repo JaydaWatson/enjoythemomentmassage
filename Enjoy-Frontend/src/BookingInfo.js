@@ -75,10 +75,6 @@ function BookingInfo() {
                             Duration: {book.duration}
                         </div>
 
-                        <div>
-                            Vip: {book.vip}
-                        </div>
-
                         <br />
 
                     </div>

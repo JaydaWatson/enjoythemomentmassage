@@ -6,7 +6,7 @@ const BookingSchema = new Schema({
     'town': String,
     'state': String,
     'zip': String,
-    'startDate': {type:String, unique: true},
+    'startDate': String,
     'level': String,
     'duration': String,
     'vip': [{ type: String }]

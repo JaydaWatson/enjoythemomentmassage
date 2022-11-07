@@ -17,6 +17,10 @@
     padding: 2px;
 }
 
+.datepicker{
+    padding: 20px;
+}
+
 .Error {
     color: red;
     font-size: 13px;
@@ -30,7 +34,8 @@
     flex-direction: column;
     resize: vertical;
     border-radius: 10px;
-    background-color: lightgrey;
+    background-color: #ffea00;
+    ;
 }
 
 .input {
@@ -51,9 +56,10 @@ input[type=checkbox] {
 }
 
 .Selectors {
+    padding: 0em;
     border-radius: 15px;
     box-shadow: 20px;
-    background-color: lightgrey;
+    background-color: #ffea00;
 }
 
 .button {

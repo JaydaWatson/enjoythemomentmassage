@@ -17,10 +17,11 @@ app.use(bodyparser.json())
 
 app.post('/api', (req, res) => {
 
-  const newBooking = req.body.bookinginfo
- 
-  console.log(req.body)
+  const newBooking = req.body
 
+  // console.log("XXXXXXXXXXXXXXXXXX")
+  // console.log(newBooking)
+ 
   try {
     const booking = new BookingModel(newBooking).save()
 
@@ -37,7 +38,7 @@ app.post('/api', (req, res) => {
 })
 
 app.get('/api', async  (req, res) => {
-
+console.log('hello')
   
   try {
 
